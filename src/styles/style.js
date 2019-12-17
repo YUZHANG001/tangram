@@ -299,7 +299,7 @@ export var Style = {
             }
 
             if (style.interactive === true) {
-                style.selection_color = FeatureSelection.makeColor(feature, context.tile, context);
+                style.selection_color = FeatureSelection.makeColor(feature, context.tile, context, style);
             }
             else {
                 style.selection_color = FeatureSelection.defaultColor;

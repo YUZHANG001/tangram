@@ -293,7 +293,7 @@ export default class FeatureSelection {
         return this.map[key];
     }
 
-    static makeColor(feature, tile, context) {
+    static makeColor(feature, tile, context, style) {
         var selector = this.makeEntry(tile);
         selector.feature = {
             id: feature.id,
@@ -301,7 +301,8 @@ export default class FeatureSelection {
             source_name: context.source,
             source_layer: context.layer,
             layers: context.layers,
-            tile: this.tiles[tile.key].tile
+            tile: this.tiles[tile.key].tile,
+            attributes: style.attributes ? { ...style.attributes } : null
         };
 
         return selector.color;
